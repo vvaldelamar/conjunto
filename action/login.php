@@ -3,25 +3,10 @@
 	session_start();
         //validacion de CSRF 
 
-     	if (isset($_POST['g-recaptcha-response']) &&  ( hash_equals($_SESSION['tokens'],$_POST['anticsrf']) ))	
+     	if (isset($_POST[hash_equals($_SESSION['tokens'],$_POST['anticsrf']) )	
 	{	
  	unset($_SESSION['tokens']);	
-
-	$url = 'https://www.google.com/recaptcha/api/siteverify';
-	$data = array('secret' => '6LdYG-EfAAAAAMGG2KQATC1w6JKVRyyotFWwzyVY', 'response' => $_POST['g-recaptcha-response']);
- 
-	$verify = curl_init();
-	curl_setopt($verify, CURLOPT_URL, $url);
-	curl_setopt($verify, CURLOPT_POST, true);
-	curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
-	curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
-	$response = curl_exec($verify);
-	$responseData = json_decode($response);
 	
-
-	if($responseData->success)
-	 {
-
 	if (isset($_POST['token']) && $_POST['token']!=='') {
 
         //Contiene las variables de configuracion para conectar a la base de datos
@@ -58,13 +43,7 @@
 
 	 }                    
 
-	else
-	 {
-		 unset($_SESSION['tokens']);
-		 $recap=sha1(md5("recaptcha"));
-		 header("location: ../index.php?recap=$recap");
-	 }
-
+	
 	}else
 		 {
 		unset($_SESSION['tokens']);
