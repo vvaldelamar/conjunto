@@ -6,5 +6,5 @@ define('DB_PASS', 'P4ntalones');
 define('DB_NAME', 'conjunto');
  
 /*Datos del usuario administrador del sistema*/
-define('USERNAME', 'admin@admin.com');
+define('USERNAME', 'admin@ingeniero-web.com');
 define('PASSWORD', 'S1santan');
