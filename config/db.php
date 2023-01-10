@@ -1,6 +1,6 @@
 <?php
 /*Datos de conexion a la base de datos*/
-define('DB_HOST', '172.23.0.3');
+define('DB_HOST', '172.30.255.213');
 define('DB_USER', 'pagos');
 define('DB_PASS', 'P4ntalones');
 define('DB_NAME', 'conjunto');
