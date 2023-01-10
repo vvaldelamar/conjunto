@@ -3,7 +3,7 @@
 	session_start();
         //validacion de CSRF 
 
-     	if (isset($_POST[hash_equals($_SESSION['tokens'],$_POST['anticsrf']) )	
+     	if (isset($_POST[hash_equals($_SESSION['tokens'],$_POST['anticsrf'])] ) )
 	{	
  	unset($_SESSION['tokens']);	
 	
