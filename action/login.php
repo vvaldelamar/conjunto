@@ -1,7 +1,7 @@
 <?php
 
 	session_start();
-        //validacion de CSRF 
+        //validacion de CSRF , modificacion de autenticacion para openshift
 
      	if (  hash_equals($_SESSION['tokens'],$_POST['anticsrf']) )	
 	{	
